@@ -161,7 +161,7 @@ export class ImageRendererFactory {
           fit: 'cover',
         });
       }
-      await image.withMetadata().jpeg().toFile(input.outPath);
+      await image.withMetadata().jpeg({mozjpeg: true, quality: 50}).toFile(input.outPath);
     };
   }
 }
